@@ -21,9 +21,9 @@ print("Lenght of escape is::", len(normalised_escape))
 print("Lenght of bcell is::", len(normalised_bcell))
 print("Lenght of tcell is::", len(normalised_tcell))
 
-x = np.arange(201)  # Assuming 201 mutation positions
+x = np.arange(201)
 x1 = np.arange(223)
-new_labels = np.arange(331, 532)  # Corresponding actual positions
+new_labels = np.arange(331, 532)
 labels = np.arange(319,541)
 
 fig, axes = plt.subplots(4, 1, figsize=(10, 6), sharex=True)
@@ -67,13 +67,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-# --- Define thresholds for decision-making ---
 bcell_threshold = 0.7      # Above 0.7 means strong B-cell epitope (retain)
 tcell_threshold = 0.7      # Above 0.7 means strong T-cell epitope (retain)
 mutation_threshold = 0.5   # Above 0.5 means high mutation frequency
 escape_threshold = 0.6     # Above 0.6 means high escape probability
 
-# --- Define weight factors for positions with available escape data ---
 # (Preference order: escape > mutation > T-cell > B-cell)
 w_mutation = 0.25
 w_escape   = 0.35
@@ -85,23 +83,19 @@ w_mutation_no_escape = 0.4
 w_tcell_no_escape    = 0.3
 w_bcell_no_escape    = 0.3
 
-# --- Prepare a reference sequence ---
 ref_seq = ("RVQPTESIVRFPNITNLCPFGEVFNATRFASVYAWNRKRISNCVADYSVLYNSASFSTFKCYGVSPTKLNDLCFTNVYADSFVIRGDEVRQIAPGQTGKIADYNYKLPDDFTGCVIAWNSNNLDSKVGGNYNYLYRLFRKSNLKPFERDISTEIYQAGSTPCNGVEGFNCYFPLQSYGFQPTNGVGYQPYRVVVLSFELLHAPATVCGPKKSTNLVKNKCVNF")
 
 master_seq_list = list(ref_seq)
 n_total = len(master_seq_list)
 
-# Define the offset: escape data starts at residue 331 whereas RBD starts at 319.
-offset = 331 - 319  # equals 12
+offset = 331 - 319
 
-# --- Generate dummy data (replace with actual data) ---
 np.random.seed(42)
 normalised_mutation_frq = np.random.rand(n_total)
 normalised_escape = np.random.rand(n_total - offset)
 normalised_bcell = np.random.rand(n_total)
 normalised_tcell = np.random.rand(n_total)
 
-# --- Create a detailed report list ---
 report_rows = []
 modified_positions = []
 
@@ -166,7 +160,6 @@ print("Master Sequence:")
 print(master_seq_str)
 print("\nModified positions (residue numbers):", [pos + 319 for pos in modified_positions])
 
-# --- Visualization ---
 positions = np.arange(n_total) + 319
 plt.figure(figsize=(12, 6))
 plt.scatter(positions, normalised_mutation_frq, label="Mutation Frequency", color="blue", marker="o")
