@@ -4,18 +4,13 @@
 from Bio import SeqIO
 
 def remove_empty_entries(input_fasta, output_fasta):
-    """Removes entries with no sequence from the given FASTA file."""
-    # List to hold sequences that are not empty
     valid_records = []
 
-    # Read the input FASTA file
     with open(input_fasta, "r") as infile:
         for record in SeqIO.parse(infile, "fasta"):
-            # Check if sequence is not empty (not just whitespace)
-            if record.seq.strip():  # Strip to remove whitespace
+            if record.seq.strip():
                 valid_records.append(record)
 
-    # Write the valid (non-empty) sequences to the output file
     with open(output_fasta, "w") as outfile:
         SeqIO.write(valid_records, outfile, "fasta")
 
