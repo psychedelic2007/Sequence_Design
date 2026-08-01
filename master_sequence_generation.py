@@ -1,179 +1,142 @@
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
+from Bio.Seq import Seq
+from Bio.SeqRecord import SeqRecord
 
-data1 = pd.read_csv("mutation_freq_combined.csv")
-data2 = pd.read_csv("escape_mutation.csv")
-data3 = pd.read_csv("bepipred.csv")
-data4 = pd.read_csv("t_cell/combined_mhc_scores.csv")
+mutation_df = pd.read_csv("mutation_freq_combined.csv") 
+escape_df = pd.read_csv("escape_mutation.csv")
+bcell_df = pd.read_csv("bepipred.csv")
 data5 = pd.read_csv("t_cell/mhc1_averaged_scores.csv")
 data6 = pd.read_csv("t_cell/mhc2_averaged_scores.csv")
 
-normalised_mutation_frq = data1["mutation_frequency"]
-normalised_escape = (data2["Escape"] - data2["Escape"].min()) / (data2["Escape"].max() - data2["Escape"].min())
-normalised_bcell = (data3["Score"] - data3["Score"].min()) / (data3["Score"].max() - data3["Score"].min())
-normalised_tcell = (data4["Combined_Score"] - data4["Combined_Score"].min())/ (data4["Combined_Score"].max() - data4["Combined_Score"].min())
-normalised_tcell1 = (data5["Average_Score"] - data5["Average_Score"].min())/ (data5["Average_Score"].max() - data5["Average_Score"].min())
-normalised_tcell2 = (data6["Average_Score"] - data6["Average_Score"].min())/ (data6["Average_Score"].max() - data6["Average_Score"].min())
+mutation_values = mutation_df["mutation_frequency"].values 
+escape_values = escape_df["Escape"].values  
+bcell_values = bcell_df["Score"].values 
+tcell_mhc1_values = data5["Average_Score"].values 
+tcell_mhc2_values = data6["Average_Score"].values
 
-print("Lenght of mutation is::", len(normalised_mutation_frq))
-print("Lenght of escape is::", len(normalised_escape))
-print("Lenght of bcell is::", len(normalised_bcell))
-print("Lenght of tcell is::", len(normalised_tcell))
+tcell_values = 0.5 * tcell_mhc1_values + 0.5 * tcell_mhc2_values
 
-x = np.arange(201)
-x1 = np.arange(223)
-new_labels = np.arange(331, 532)
-labels = np.arange(319,541)
+print(f"Length of mutation: {len(mutation_values)}")
+print(f"Length of escape: {len(escape_values)}")
+print(f"Length of bcell: {len(bcell_values)}")
+print(f"Length of tcell MHC-I: {len(tcell_mhc1_values)}")
+print(f"Length of tcell MHC-II: {len(tcell_mhc2_values)}")
+print(f"Length of tcell combined: {len(tcell_values)}")
 
-fig, axes = plt.subplots(4, 1, figsize=(10, 6), sharex=True)
-axes[0].bar(x, normalised_mutation_frq[22:], color='blue', alpha=0.7)
-axes[0].set_ylabel("Mutation Probability")
-axes[0].set_title("Mutation Probability vs Position")
-axes[1].bar(x, normalised_escape, color='red', alpha=0.7)
-axes[1].set_ylabel("Escape Probability")
-axes[1].set_title("Escape Probability vs Position")
-axes[2].bar(x, normalised_bcell[22:], color="magenta", alpha=0.7)
-axes[2].set_ylabel("BCell Epitope")
-axes[2].set_title("BCell Epitope vs Position")
-axes[3].bar(x, normalised_tcell[22:], color="green", alpha=0.7)
-axes[3].set_ylabel("TCell Epitope")
-axes[3].set_title("TCell Epitope vs Position")
-axes[3].set_xticks(x[::10])
-axes[3].set_xticklabels(new_labels[::10], rotation=45)
-plt.xlabel("Position (RBD Region)")
-plt.tight_layout()
-plt.savefig("mutation_escape_bcell_tcell.png", dpi=300)
-plt.show()
 
-fig, axes = plt.subplots(3, 1, figsize=(10, 6), sharex=True)
-axes[0].bar(x1, normalised_tcell1, color='blue', alpha=0.7)
-axes[0].set_ylabel("MHC-I Score")
-axes[0].set_title("MHC-I vs Position")
-axes[1].bar(x1, normalised_tcell2, color='red', alpha=0.7)
-axes[1].set_ylabel("MHC-II Score")
-axes[1].set_title("MHC-II vs Position")
-axes[2].bar(x1, normalised_tcell, color="magenta", alpha=0.7)
-axes[2].set_ylabel("TCell Epitope Score")
-axes[2].set_title("TCell Epitope vs Position")
-axes[2].set_xticks(x1[::10])
-axes[2].set_xticklabels(labels[::10], rotation=45)
-plt.xlabel("Position (RBD Region)")
-plt.tight_layout()
-plt.savefig("t_cell/tcell_combined.png", dpi=300)
-plt.show()
+# Min-max normalization
+norm_mutation = (mutation_values - np.nanmin(mutation_values)) / (np.nanmax(mutation_values) - np.nanmin(mutation_values))
+norm_escape = (escape_values - np.nanmin(escape_values)) / (np.nanmax(escape_values) - np.nanmin(escape_values))
+norm_bcell = (bcell_values - np.nanmin(bcell_values)) / (np.nanmax(bcell_values) - np.nanmin(bcell_values))
+norm_tcell = (tcell_values - np.nanmin(tcell_values)) / (np.nanmax(tcell_values) - np.nanmin(tcell_values))
+norm_tcell_mhc1 = (tcell_mhc1_values - np.nanmin(tcell_mhc1_values)) / (np.nanmax(tcell_mhc1_values) - np.nanmin(tcell_mhc1_values))
+norm_tcell_mhc2 = (tcell_mhc2_values - np.nanmin(tcell_mhc2_values)) / (np.nanmax(tcell_mhc2_values) - np.nanmin(tcell_mhc2_values))
 
-import numpy as np
-import matplotlib.pyplot as plt
-import pandas as pd
+norm_escape_full = np.full(223, np.nan)
+norm_escape_full[12:213] = norm_escape
 
-bcell_threshold = 0.7      # Above 0.7 means strong B-cell epitope (retain)
-tcell_threshold = 0.7      # Above 0.7 means strong T-cell epitope (retain)
-mutation_threshold = 0.5   # Above 0.5 means high mutation frequency
-escape_threshold = 0.6     # Above 0.6 means high escape probability
+print(f"\nFull array lengths after padding:")
+print(f"Mutation: {len(norm_mutation)}")
+print(f"Escape (padded): {len(norm_escape_full)}")
+print(f"B-cell: {len(norm_bcell)}")
+print(f"T-cell combined: {len(norm_tcell)}")
+print(f"T-cell MHC-I: {len(norm_tcell_mhc1)}")
+print(f"T-cell MHC-II: {len(norm_tcell_mhc2)}")
 
-# (Preference order: escape > mutation > T-cell > B-cell)
-w_mutation = 0.25
-w_escape   = 0.35
-w_tcell    = 0.2
-w_bcell    = 0.2
 
-# For positions before escape data is available, re-scale weights.
-w_mutation_no_escape = 0.4
-w_tcell_no_escape    = 0.3
-w_bcell_no_escape    = 0.3
+position_labels = np.arange(319, 542)  # 319, 320, ..., 541
+print(f"\nPosition labels: {len(position_labels)} positions (319-541)")
 
-ref_seq = ("RVQPTESIVRFPNITNLCPFGEVFNATRFASVYAWNRKRISNCVADYSVLYNSASFSTFKCYGVSPTKLNDLCFTNVYADSFVIRGDEVRQIAPGQTGKIADYNYKLPDDFTGCVIAWNSNNLDSKVGGNYNYLYRLFRKSNLKPFERDISTEIYQAGSTPCNGVEGFNCYFPLQSYGFQPTNGVGYQPYRVVVLSFELLHAPATVCGPKKSTNLVKNKCVNF")
+# Thresholds
+mutation_threshold = 0.5
+bcell_threshold = 0.7
+tcell_threshold = 0.7
+escape_threshold = 0.6
 
-master_seq_list = list(ref_seq)
-n_total = len(master_seq_list)
+# For all 223 positions
+mutation_flagged_mask = norm_mutation > mutation_threshold
+bcell_flagged_mask = norm_bcell > bcell_threshold
+tcell_flagged_mask = norm_tcell > tcell_threshold
+tcell_mhc1_flagged_mask = norm_tcell_mhc1 > tcell_threshold
+tcell_mhc2_flagged_mask = norm_tcell_mhc2 > tcell_threshold
 
-offset = 331 - 319
+# Get position numbers for flagged residues
+mutation_flagged_positions = position_labels[mutation_flagged_mask]
+bcell_flagged_positions = position_labels[bcell_flagged_mask]
+tcell_flagged_positions = position_labels[tcell_flagged_mask]
+tcell_mhc1_flagged_positions = position_labels[tcell_mhc1_flagged_mask]
+tcell_mhc2_flagged_positions = position_labels[tcell_mhc2_flagged_mask]
 
-np.random.seed(42)
-normalised_mutation_frq = np.random.rand(n_total)
-normalised_escape = np.random.rand(n_total - offset)
-normalised_bcell = np.random.rand(n_total)
-normalised_tcell = np.random.rand(n_total)
+# For escape, only consider positions 331-541 (indices 12:213)
+escape_flagged_mask = norm_escape_full[12:213] > escape_threshold
+escape_flagged_positions = position_labels[12:213][escape_flagged_mask]
 
-report_rows = []
-modified_positions = []
+print(f"\n=== THRESHOLD ANALYSIS ===")
+print(f"Mutation probability threshold: {mutation_threshold}")
+print(f"B-cell and T-cell threshold: {tcell_threshold}")
+print(f"Escape threshold: {escape_threshold}")
 
-for i in range(n_total):
-    ref_residue = master_seq_list[i]
-    mut_score = normalised_mutation_frq[i]
-    bcell_score = normalised_bcell[i]
-    tcell_score = normalised_tcell[i]
+print(f"\nPositions above thresholds:")
+print(f"Mutation frequency > {mutation_threshold}: {len(mutation_flagged_positions)} positions")
+print(f"B-cell epitope > {bcell_threshold}: {len(bcell_flagged_positions)} positions")
+print(f"T-cell combined > {tcell_threshold}: {len(tcell_flagged_positions)} positions")
+print(f"MHC-I > {tcell_threshold}: {len(tcell_mhc1_flagged_positions)} positions")
+print(f"MHC-II > {tcell_threshold}: {len(tcell_mhc2_flagged_positions)} positions")
+print(f"Escape > {escape_threshold}: {len(escape_flagged_positions)} positions")
 
-    if i < offset:
-        esc_score = np.nan
-        current_w_mutation = w_mutation_no_escape
-        current_w_tcell = w_tcell_no_escape
-        current_w_bcell = w_bcell_no_escape
-        escape_above = False
-    else:
-        esc_score = normalised_escape[i - offset]
-        current_w_mutation = w_mutation
-        current_w_tcell = w_tcell
-        current_w_bcell = w_bcell
-        current_w_escape = w_escape
-        escape_above = not np.isnan(esc_score)
 
-    mutation_above = mut_score >= mutation_threshold
-    bcell_above = bcell_score >= bcell_threshold
-    tcell_above = tcell_score >= tcell_threshold
+# Hard constraint: Epitope-protected positions (B-cell OR T-cell >= 0.9) are NEVER modified
+epitope_protected = bcell_flagged_mask | tcell_flagged_mask
+escape_mask_full = np.full(223, False)
+escape_mask_full[12:213] = norm_escape_full[12:213] > escape_threshold
+modify_candidates = (mutation_flagged_mask | escape_mask_full) & ~epitope_protected
+positions_to_modify = position_labels[modify_candidates]
 
-    if i < offset:
-        weighted_score = (current_w_mutation * mut_score) + (current_w_tcell * tcell_score) + (current_w_bcell * bcell_score)
-    else:
-        weighted_score = (current_w_mutation * mut_score) + (current_w_escape * esc_score) + (current_w_tcell * tcell_score) + (current_w_bcell * bcell_score)
+print(f"\n=== MODIFICATION DECISION ===")
+print(f"Epitope-protected positions (B-cell OR T-cell >= {bcell_threshold}): {np.sum(epitope_protected)}")
+print(f"Positions flagged for modification: {len(positions_to_modify)}")
+print(f"Positions retained: {223 - len(positions_to_modify)}")
+print(f"\nPositions to modify (residue numbers): {sorted(positions_to_modify.tolist())}")
 
-    if bcell_above or tcell_above:
-        decision = "Retain"
-        explanation = "High B-cell or T-cell epitope score; retained for immune recognition."
-    elif mutation_above or escape_above:
-        decision = "Modify"
-        explanation = "Modification: High mutation and/or escape probability (and epitope scores not high)."
-        master_seq_list[i] = "X"
-        modified_positions.append(i)
-    else:
-        decision = "Retain"
-        explanation = "None of the thresholds met; retained by default."
 
-    report_rows.append({
-        "Position": i + 319,
-        "ReferenceResidue": ref_residue,
-        "MutationFrequency": mut_score,
-        "EscapeProbability": esc_score if i >= offset else None,
-        "BcellEpitopeScore": bcell_score,
-        "TcellEpitopeScore": tcell_score,
-        "WeightedScore": weighted_score,
-        "Decision": decision,
-        "Explanation": explanation
-    })
+# WT RBD sequence (Wuhan-Hu-1)
+wt_rbd = "RVQPTESIVRFPNITNLCPFGEVFNATRFASVYAWNRKRISNCVADYSVLYNFASFFTFKCYGVSPTKLNDLCFTNVYADSFVIRGDEVRQIAPGQTGKIADYNYKLPDDFTGCVIAWNSNNLDSKVGGNYNYLYRLFRKSNLKPFERDISTEIYQAGNKPCNGVEGFNCYFPLQSYGFQPTYGVGYQPYRVVVLSFELLHAPATVCGPKKSTNLVKNKCVNF"
+print(f"\nWT RBD length: {len(wt_rbd)}")
 
-report_df = pd.DataFrame(report_rows)
-report_df.to_csv("detailed_report.csv", index=False)
+master_seq_list = list(wt_rbd)
 
-master_seq_str = "".join(master_seq_list)
-print("Master Sequence:")
-print(master_seq_str)
-print("\nModified positions (residue numbers):", [pos + 319 for pos in modified_positions])
+for i, pos in enumerate(position_labels):
+    if pos in positions_to_modify:
+        master_seq_list[i] = 'X'  # Mark for modification
+    # else: keep WT residue (already in master_seq_list)
 
-positions = np.arange(n_total) + 319
-plt.figure(figsize=(12, 6))
-plt.scatter(positions, normalised_mutation_frq, label="Mutation Frequency", color="blue", marker="o")
-plt.scatter(positions[offset:], normalised_escape, label="Escape Probability", color="red", marker="s")
-plt.scatter(positions, normalised_bcell, label="B-cell Epitope Score", color="magenta", marker="^")
-plt.scatter(positions, normalised_tcell, label="T-cell Epitope Score", color="green", marker="d")
+master_sequence = ''.join(master_seq_list)
 
-for pos in modified_positions:
-    plt.axvline(x=pos + 319, color="gray", linestyle="--", alpha=0.5)
+print(f"\nMaster Sequence:")
+print(master_sequence)
+print(f"\nModified positions (residue numbers): {sorted(positions_to_modify.tolist())}")
 
-plt.xlabel("Residue Position (Actual Number)")
-plt.ylabel("Normalized Score")
-plt.title("Overlay of Mutation, Escape, B-cell, and T-cell Epitope Scores\n(Gray lines indicate modified positions)")
-plt.legend()
-plt.tight_layout()
-plt.savefig("master_sequence.png", dpi=300)
-plt.show()
+# Save master sequence
+with open("master_sequence_template.txt", "w") as f:
+    f.write(f"Master sequence (X = positions to modify):\n")
+    f.write(master_sequence)
+    f.write(f"\n\nPositions to modify: {sorted(positions_to_modify.tolist())}")
+print("\n✓ Master sequence saved to 'master_sequence_template.txt'")
+
+results_df = pd.DataFrame({
+    'Position': position_labels,
+    'Mutation_Norm': norm_mutation,
+    'Escape_Norm': norm_escape_full,
+    'Bcell_Norm': norm_bcell,
+    'Tcell_Combined_Norm': norm_tcell,
+    'Tcell_MHC1_Norm': norm_tcell_mhc1,
+    'Tcell_MHC2_Norm': norm_tcell_mhc2,
+    'Epitope_Protected': epitope_protected,
+    'Flagged_For_Modify': modify_candidates,
+    'WT_Residue': list(wt_rbd),
+    'Master_Template': master_seq_list
+})
+
+results_df.to_csv("master_sequence_analysis.csv", index=False)
+print("✓ Detailed analysis saved to 'master_sequence_analysis.csv'")
