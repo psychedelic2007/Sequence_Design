@@ -1,0 +1,1023 @@
+=== Comprehensive Mutation Analysis Report ===
+Analysis Date: 2025-02-12 20:34:14
+Total sequences analyzed: 1910
+
+=== Statistical Summary ===
+Average mutation frequency: 0.070
+Median mutation frequency: 0.001
+=== Top Mutation Positions (Ordered by Frequency) ===
+
+Position 180 (Reference: Q):
+Mutation Frequency: 0.975
+Conservation Score: 0.954
+Mutations: R(1857), P(3), V(1), T(1)
+
+Position 183 (Reference: N):
+Mutation Frequency: 0.974
+Conservation Score: 0.953
+Mutations: Y(1856), G(3), Q(1), V(1)
+
+Position 166 (Reference: E):
+Mutation Frequency: 0.972
+Conservation Score: 0.940
+Mutations: A(1843), S(4), V(4), G(3), T(1), Y(1)
+
+Position 187 (Reference: Y):
+Mutation Frequency: 0.970
+Conservation Score: 0.948
+Mutations: H(1848), Q(3), V(1), P(1)
+
+Position 160 (Reference: T):
+Mutation Frequency: 0.964
+Conservation Score: 0.941
+Mutations: K(1837), R(2), E(1), V(1), C(1)
+
+Position 159 (Reference: S):
+Mutation Frequency: 0.961
+Conservation Score: 0.939
+Mutations: N(1831), K(2), G(1), P(1)
+
+Position 21 (Reference: G):
+Mutation Frequency: 0.953
+Conservation Score: 0.908
+Mutations: D(1792), H(24), A(2), N(1), Y(1), V(1)
+
+Position 55 (Reference: S):
+Mutation Frequency: 0.947
+Conservation Score: 0.929
+Mutations: P(1807), K(1)
+
+Position 57 (Reference: S):
+Mutation Frequency: 0.945
+Conservation Score: 0.927
+Mutations: F(1803), Y(1)
+
+Position 175 (Reference: Q):
+Mutation Frequency: 0.942
+Conservation Score: 0.921
+Mutations: R(1796), S(3), Y(1)
+
+Position 53 (Reference: S):
+Mutation Frequency: 0.932
+Conservation Score: 0.895
+Mutations: F(1757), L(22), A(1)
+
+Position 58 (Reference: T):
+Mutation Frequency: 0.931
+Conservation Score: 0.910
+Mutations: A(1774), S(2), G(1), K(1)
+
+Position 87 (Reference: D):
+Mutation Frequency: 0.916
+Conservation Score: 0.901
+Mutations: N(1747), I(1), V(1)
+
+Position 99 (Reference: K):
+Mutation Frequency: 0.902
+Conservation Score: 0.878
+Mutations: N(1711), T(6), I(4), H(1), A(1)
+
+Position 90 (Reference: R):
+Mutation Frequency: 0.890
+Conservation Score: 0.881
+Mutations: S(1697), G(1), I(1)
+
+Position 122 (Reference: N):
+Mutation Frequency: 0.843
+Conservation Score: 0.850
+Mutations: K(1607), R(1), V(1), D(1)
+
+Position 28 (Reference: R):
+Mutation Frequency: 0.035
+Conservation Score: 0.938
+Mutations: T(37), K(26), S(2), Y(1), I(1)
+
+Position 134 (Reference: L):
+Mutation Frequency: 0.032
+Conservation Score: 0.939
+Mutations: R(30), M(14), Q(13), W(5)
+
+Position 128 (Reference: G):
+Mutation Frequency: 0.021
+Conservation Score: 0.964
+Mutations: S(37), D(1), Y(1), N(1)
+
+Position 168 (Reference: F):
+Mutation Frequency: 0.020
+Conservation Score: 0.959
+Mutations: V(18), P(9), S(7), N(3), C(1)
+
+Position 142 (Reference: N):
+Mutation Frequency: 0.016
+Conservation Score: 0.970
+Mutations: K(26), I(1), T(1), E(1), H(1)
+
+Position 204 (Reference: A):
+Mutation Frequency: 0.015
+Conservation Score: 0.970
+Mutations: P(22), V(4), T(3)
+
+Position 132 (Reference: N):
+Mutation Frequency: 0.015
+Conservation Score: 0.973
+Mutations: D(26), L(1), R(1)
+
+Position 178 (Reference: G):
+Mutation Frequency: 0.012
+Conservation Score: 0.975
+Mutations: S(16), F(3), D(1), Y(1), R(1)
+
+Position 172 (Reference: F):
+Mutation Frequency: 0.011
+Conservation Score: 0.975
+Mutations: S(12), L(3), P(3), Y(2), V(1)
+
+Position 38 (Reference: K):
+Mutation Frequency: 0.010
+Conservation Score: 0.979
+Mutations: T(10), R(8), C(1)
+
+Position 126 (Reference: K):
+Mutation Frequency: 0.010
+Conservation Score: 0.977
+Mutations: R(9), N(5), T(3), Y(1), G(1)
+
+Position 127 (Reference: V):
+Mutation Frequency: 0.009
+Conservation Score: 0.978
+Mutations: P(8), H(4), I(1), F(1), N(1), A(1), G(1)
+
+Position 176 (Reference: S):
+Mutation Frequency: 0.008
+Conservation Score: 0.982
+Mutations: P(12), Y(3), G(1)
+
+Position 50 (Reference: L):
+Mutation Frequency: 0.005
+Conservation Score: 0.989
+Mutations: I(9), P(1)
+
+Position 165 (Reference: V):
+Mutation Frequency: 0.005
+Conservation Score: 0.987
+Mutations: G(2), K(2), I(1), A(1), F(1), C(1), E(1)
+
+Position 137 (Reference: L):
+Mutation Frequency: 0.005
+Conservation Score: 0.988
+Mutations: F(3), S(3), W(1), N(1), R(1)
+
+Position 36 (Reference: N):
+Mutation Frequency: 0.004
+Conservation Score: 0.990
+Mutations: K(5), S(2), D(1)
+
+Position 203 (Reference: P):
+Mutation Frequency: 0.004
+Conservation Score: 0.989
+Mutations: A(3), S(2), Q(1), G(1), T(1)
+
+Position 14 (Reference: I):
+Mutation Frequency: 0.004
+Conservation Score: 0.991
+Mutations: V(8)
+
+Position 85 (Reference: R):
+Mutation Frequency: 0.004
+Conservation Score: 0.991
+Mutations: K(5), S(1), N(1)
+
+Position 211 (Reference: K):
+Mutation Frequency: 0.004
+Conservation Score: 0.990
+Mutations: S(3), R(1), V(1), T(1), N(1)
+
+Position 207 (Reference: C):
+Mutation Frequency: 0.003
+Conservation Score: 0.992
+Mutations: G(3), S(1), P(1), Y(1)
+
+Position 202 (Reference: A):
+Mutation Frequency: 0.003
+Conservation Score: 0.992
+Mutations: P(3), S(1), T(1), C(1)
+
+Position 209 (Reference: P):
+Mutation Frequency: 0.003
+Conservation Score: 0.992
+Mutations: K(4), N(1), V(1)
+
+Position 201 (Reference: H):
+Mutation Frequency: 0.003
+Conservation Score: 0.992
+Mutations: A(3), Y(1), V(1), P(1)
+
+Position 215 (Reference: L):
+Mutation Frequency: 0.003
+Conservation Score: 0.992
+Mutations: V(3), C(1), K(1), N(1)
+
+Position 30 (Reference: A):
+Mutation Frequency: 0.003
+Conservation Score: 0.992
+Mutations: S(4), P(1), W(1)
+
+Position 214 (Reference: N):
+Mutation Frequency: 0.003
+Conservation Score: 0.992
+Mutations: L(3), V(2), K(1)
+
+Position 208 (Reference: G):
+Mutation Frequency: 0.003
+Conservation Score: 0.992
+Mutations: P(3), T(1), K(1), L(1)
+
+Position 213 (Reference: T):
+Mutation Frequency: 0.003
+Conservation Score: 0.992
+Mutations: N(4), L(1), C(1)
+
+Position 212 (Reference: S):
+Mutation Frequency: 0.003
+Conservation Score: 0.992
+Mutations: T(3), K(2), N(1)
+
+Position 169 (Reference: N):
+Mutation Frequency: 0.003
+Conservation Score: 0.993
+Mutations: C(3), L(1), Y(1)
+
+Position 189 (Reference: P):
+Mutation Frequency: 0.003
+Conservation Score: 0.993
+Mutations: Y(3), V(1), R(1)
+
+Position 188 (Reference: Q):
+Mutation Frequency: 0.003
+Conservation Score: 0.993
+Mutations: P(3), V(1), Y(1)
+
+Position 200 (Reference: L):
+Mutation Frequency: 0.003
+Conservation Score: 0.993
+Mutations: H(3), T(1), A(1)
+
+Position 163 (Reference: N):
+Mutation Frequency: 0.003
+Conservation Score: 0.993
+Mutations: K(3), F(1), V(1)
+
+Position 171 (Reference: Y):
+Mutation Frequency: 0.003
+Conservation Score: 0.993
+Mutations: F(3), S(1), P(1)
+
+Position 138 (Reference: F):
+Mutation Frequency: 0.003
+Conservation Score: 0.993
+Mutations: L(4), K(1)
+
+Position 216 (Reference: V):
+Mutation Frequency: 0.003
+Conservation Score: 0.993
+Mutations: K(3), N(1), F(1)
+
+Position 218 (Reference: N):
+Mutation Frequency: 0.003
+Conservation Score: 0.993
+Mutations: K(3), F(1), C(1)
+
+Position 205 (Reference: T):
+Mutation Frequency: 0.003
+Conservation Score: 0.993
+Mutations: V(3), K(1), C(1)
+
+Position 170 (Reference: C):
+Mutation Frequency: 0.003
+Conservation Score: 0.993
+Mutations: Y(3), R(1), F(1)
+
+Position 167 (Reference: G):
+Mutation Frequency: 0.003
+Conservation Score: 0.993
+Mutations: P(3), F(1), N(1)
+
+Position 182 (Reference: T):
+Mutation Frequency: 0.003
+Conservation Score: 0.993
+Mutations: Y(3), H(1), G(1)
+
+Position 206 (Reference: V):
+Mutation Frequency: 0.003
+Conservation Score: 0.993
+Mutations: C(3), K(1), G(1)
+
+Position 186 (Reference: G):
+Mutation Frequency: 0.003
+Conservation Score: 0.993
+Mutations: H(3), R(1), Q(1)
+
+Position 190 (Reference: Y):
+Mutation Frequency: 0.003
+Conservation Score: 0.993
+Mutations: R(3), L(1), V(1)
+
+Position 185 (Reference: V):
+Mutation Frequency: 0.003
+Conservation Score: 0.993
+Mutations: G(3), Y(1), H(1)
+
+Position 191 (Reference: R):
+Mutation Frequency: 0.003
+Conservation Score: 0.993
+Mutations: V(4), S(1)
+
+Position 198 (Reference: E):
+Mutation Frequency: 0.003
+Conservation Score: 0.993
+Mutations: L(4), P(1)
+
+Position 181 (Reference: P):
+Mutation Frequency: 0.003
+Conservation Score: 0.993
+Mutations: T(3), G(1), Y(1)
+
+Position 179 (Reference: F):
+Mutation Frequency: 0.003
+Conservation Score: 0.993
+Mutations: R(3), G(1), P(1)
+
+Position 197 (Reference: F):
+Mutation Frequency: 0.003
+Conservation Score: 0.993
+Mutations: E(3), A(1), L(1)
+
+Position 173 (Reference: P):
+Mutation Frequency: 0.003
+Conservation Score: 0.993
+Mutations: L(3), G(1), Q(1)
+
+Position 194 (Reference: V):
+Mutation Frequency: 0.003
+Conservation Score: 0.993
+Mutations: L(4), S(1)
+
+Position 177 (Reference: Y):
+Mutation Frequency: 0.003
+Conservation Score: 0.993
+Mutations: G(3), T(1), F(1)
+
+Position 174 (Reference: L):
+Mutation Frequency: 0.003
+Conservation Score: 0.993
+Mutations: Q(3), F(1), S(1)
+
+Position 196 (Reference: S):
+Mutation Frequency: 0.003
+Conservation Score: 0.993
+Mutations: F(3), H(1), E(1)
+
+Position 157 (Reference: A):
+Mutation Frequency: 0.002
+Conservation Score: 0.994
+Mutations: V(1), T(1), C(1), N(1)
+
+Position 220 (Reference: C):
+Mutation Frequency: 0.002
+Conservation Score: 0.995
+Mutations: V(3), N(1)
+
+Position 221 (Reference: V):
+Mutation Frequency: 0.002
+Conservation Score: 0.995
+Mutations: N(3), F(1)
+
+Position 5 (Reference: T):
+Mutation Frequency: 0.002
+Conservation Score: 0.994
+Mutations: I(2), K(1), A(1)
+
+Position 184 (Reference: G):
+Mutation Frequency: 0.002
+Conservation Score: 0.995
+Mutations: V(3), P(1)
+
+Position 219 (Reference: K):
+Mutation Frequency: 0.002
+Conservation Score: 0.995
+Mutations: C(3), V(1)
+
+Position 217 (Reference: K):
+Mutation Frequency: 0.002
+Conservation Score: 0.995
+Mutations: N(4)
+
+Position 195 (Reference: L):
+Mutation Frequency: 0.002
+Conservation Score: 0.995
+Mutations: S(3), F(1)
+
+Position 71 (Reference: D):
+Mutation Frequency: 0.002
+Conservation Score: 0.994
+Mutations: E(2), N(1), C(1)
+
+Position 199 (Reference: L):
+Mutation Frequency: 0.002
+Conservation Score: 0.994
+Mutations: I(1), F(1), A(1), H(1)
+
+Position 153 (Reference: E):
+Mutation Frequency: 0.002
+Conservation Score: 0.996
+Mutations: Q(1), G(1), Y(1)
+
+Position 124 (Reference: D):
+Mutation Frequency: 0.002
+Conservation Score: 0.996
+Mutations: G(1), V(1), K(1)
+
+Position 123 (Reference: L):
+Mutation Frequency: 0.002
+Conservation Score: 0.996
+Mutations: V(1), G(1), S(1)
+
+Position 131 (Reference: Y):
+Mutation Frequency: 0.002
+Conservation Score: 0.996
+Mutations: N(1), H(1), R(1)
+
+Position 115 (Reference: V):
+Mutation Frequency: 0.002
+Conservation Score: 0.996
+Mutations: S(1), A(1), F(1)
+
+Position 140 (Reference: K):
+Mutation Frequency: 0.002
+Conservation Score: 0.996
+Mutations: E(1), P(1), N(1)
+
+Position 97 (Reference: T):
+Mutation Frequency: 0.002
+Conservation Score: 0.996
+Mutations: N(2), D(1)
+
+Position 112 (Reference: T):
+Mutation Frequency: 0.002
+Conservation Score: 0.996
+Mutations: I(1), A(1), C(1)
+
+Position 222 (Reference: N):
+Mutation Frequency: 0.002
+Conservation Score: 0.996
+Mutations: F(3)
+
+Position 84 (Reference: I):
+Mutation Frequency: 0.002
+Conservation Score: 0.996
+Mutations: V(2), G(1)
+
+Position 76 (Reference: N):
+Mutation Frequency: 0.002
+Conservation Score: 0.996
+Mutations: S(2), Y(1)
+
+Position 39 (Reference: R):
+Mutation Frequency: 0.002
+Conservation Score: 0.996
+Mutations: K(2), V(1)
+
+Position 64 (Reference: V):
+Mutation Frequency: 0.002
+Conservation Score: 0.996
+Mutations: L(2), P(1)
+
+Position 93 (Reference: A):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: G(2)
+
+Position 150 (Reference: I):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: Y(1), T(1)
+
+Position 156 (Reference: Q):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: P(1), G(1)
+
+Position 155 (Reference: Y):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: K(1), A(1)
+
+Position 154 (Reference: I):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: N(1), Q(1)
+
+Position 70 (Reference: N):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: T(1), L(1)
+
+Position 152 (Reference: T):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: A(1), I(1)
+
+Position 151 (Reference: S):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: Q(1), E(1)
+
+Position 94 (Reference: P):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: N(1), Q(1)
+
+Position 149 (Reference: D):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: I(1), S(1)
+
+Position 158 (Reference: G):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: N(1), K(1)
+
+Position 147 (Reference: E):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: T(1), D(1)
+
+Position 146 (Reference: F):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: S(1), R(1)
+
+Position 145 (Reference: P):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: I(1), E(1)
+
+Position 144 (Reference: K):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: D(1), F(1)
+
+Position 143 (Reference: L):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: R(1), P(1)
+
+Position 72 (Reference: L):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: V(1), F(1)
+
+Position 141 (Reference: S):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: F(1), L(1)
+
+Position 69 (Reference: L):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: F(1), D(1)
+
+Position 67 (Reference: T):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: L(2)
+
+Position 68 (Reference: K):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: C(1), N(1)
+
+Position 59 (Reference: F):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: V(1), C(1)
+
+Position 16 (Reference: N):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: K(2)
+
+Position 210 (Reference: K):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: L(1), S(1)
+
+Position 22 (Reference: E):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: K(2)
+
+Position 23 (Reference: V):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: I(2)
+
+Position 193 (Reference: V):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: E(1), L(1)
+
+Position 34 (Reference: A):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: S(1), R(1)
+
+Position 41 (Reference: S):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: N(1), D(1)
+
+Position 49 (Reference: V):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: I(1), A(1)
+
+Position 60 (Reference: K):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: S(1), Y(1)
+
+Position 139 (Reference: R):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: K(1), S(1)
+
+Position 61 (Reference: C):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: P(1), G(1)
+
+Position 62 (Reference: Y):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: T(1), V(1)
+
+Position 63 (Reference: G):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: K(1), S(1)
+
+Position 65 (Reference: S):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: N(1), T(1)
+
+Position 164 (Reference: G):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: N(1), A(1)
+
+Position 66 (Reference: P):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: D(1), K(1)
+
+Position 162 (Reference: C):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: G(2)
+
+Position 161 (Reference: P):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: A(1), N(1)
+
+Position 73 (Reference: C):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: Y(1), T(1)
+
+Position 148 (Reference: R):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: E(1), I(1)
+
+Position 74 (Reference: F):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: A(1), N(1)
+
+Position 105 (Reference: Y):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: D(1), L(1)
+
+Position 113 (Reference: G):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: W(1), V(1)
+
+Position 88 (Reference: E):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: A(1), S(1)
+
+Position 111 (Reference: F):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: I(1), G(1)
+
+Position 110 (Reference: D):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: V(1), T(1)
+
+Position 109 (Reference: D):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: C(1), F(1)
+
+Position 108 (Reference: P):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: G(1), D(1)
+
+Position 107 (Reference: L):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: T(1), D(1)
+
+Position 106 (Reference: K):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: F(1), P(1)
+
+Position 75 (Reference: T):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: D(1), V(1)
+
+Position 86 (Reference: G):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: Q(1), E(1)
+
+Position 104 (Reference: N):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: D(1), K(1)
+
+Position 89 (Reference: V):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: P(1), Q(1)
+
+Position 101 (Reference: A):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: K(1), Y(1)
+
+Position 100 (Reference: I):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: Y(1), D(1)
+
+Position 98 (Reference: G):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: Y(1), I(1)
+
+Position 92 (Reference: I):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: T(1), P(1)
+
+Position 96 (Reference: Q):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: A(1), G(1)
+
+Position 95 (Reference: G):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: I(1), T(1)
+
+Position 114 (Reference: C):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: N(1), I(1)
+
+Position 102 (Reference: D):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: L(1), N(1)
+
+Position 116 (Reference: I):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: N(1), W(1)
+
+Position 81 (Reference: S):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: G(1), V(1)
+
+Position 129 (Reference: G):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: L(1), Y(1)
+
+Position 117 (Reference: A):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: K(1), N(1)
+
+Position 78 (Reference: Y):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: V(1), D(1)
+
+Position 79 (Reference: A):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: I(1), S(1)
+
+Position 135 (Reference: Y):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: K(1), L(1)
+
+Position 80 (Reference: D):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: R(1), F(1)
+
+Position 77 (Reference: V):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: F(1), A(1)
+
+Position 125 (Reference: S):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: N(1), V(1)
+
+Position 83 (Reference: V):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: E(1), R(1)
+
+Position 118 (Reference: W):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: L(1), S(1)
+
+Position 121 (Reference: N):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: K(1), L(1)
+
+Position 136 (Reference: R):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: S(1), F(1)
+
+Position 82 (Reference: F):
+Mutation Frequency: 0.001
+Conservation Score: 0.997
+Mutations: N(1), I(1)
+
+Position 6 (Reference: E):
+Mutation Frequency: 0.001
+Conservation Score: 0.999
+Mutations: Q(1)
+
+Position 32 (Reference: V):
+Mutation Frequency: 0.001
+Conservation Score: 0.999
+Mutations: R(1)
+
+Position 31 (Reference: S):
+Mutation Frequency: 0.001
+Conservation Score: 0.999
+Mutations: N(1)
+
+Position 192 (Reference: V):
+Mutation Frequency: 0.001
+Conservation Score: 0.999
+Mutations: F(1)
+
+Position 27 (Reference: T):
+Mutation Frequency: 0.001
+Conservation Score: 0.999
+Mutations: V(1)
+
+Position 29 (Reference: F):
+Mutation Frequency: 0.001
+Conservation Score: 0.999
+Mutations: A(1)
+
+Position 26 (Reference: A):
+Mutation Frequency: 0.001
+Conservation Score: 0.999
+Mutations: S(1)
+
+Position 91 (Reference: Q):
+Mutation Frequency: 0.001
+Conservation Score: 0.999
+Mutations: A(1)
+
+Position 130 (Reference: N):
+Mutation Frequency: 0.001
+Conservation Score: 0.999
+Mutations: Y(1)
+
+Position 133 (Reference: Y):
+Mutation Frequency: 0.001
+Conservation Score: 0.999
+Mutations: F(1)
+
+Position 33 (Reference: Y):
+Mutation Frequency: 0.001
+Conservation Score: 0.999
+Mutations: K(1)
+
+Position 103 (Reference: Y):
+Mutation Frequency: 0.001
+Conservation Score: 0.999
+Mutations: P(1)
+
+Position 35 (Reference: W):
+Mutation Frequency: 0.001
+Conservation Score: 0.999
+Mutations: I(1)
+
+Position 37 (Reference: R):
+Mutation Frequency: 0.001
+Conservation Score: 0.999
+Mutations: N(1)
+
+Position 40 (Reference: I):
+Mutation Frequency: 0.001
+Conservation Score: 0.999
+Mutations: A(1)
+
+Position 42 (Reference: N):
+Mutation Frequency: 0.001
+Conservation Score: 0.999
+Mutations: Y(1)
+
+Position 43 (Reference: C):
+Mutation Frequency: 0.001
+Conservation Score: 0.999
+Mutations: S(1)
+
+Position 45 (Reference: A):
+Mutation Frequency: 0.001
+Conservation Score: 0.999
+Mutations: L(1)
+
+Position 46 (Reference: D):
+Mutation Frequency: 0.001
+Conservation Score: 0.999
+Mutations: Y(1)
+
+Position 47 (Reference: Y):
+Mutation Frequency: 0.001
+Conservation Score: 0.999
+Mutations: N(1)
+
+Position 48 (Reference: S):
+Mutation Frequency: 0.001
+Conservation Score: 0.999
+Mutations: F(1)
+
+Position 51 (Reference: Y):
+Mutation Frequency: 0.001
+Conservation Score: 0.999
+Mutations: F(1)
+
+Position 52 (Reference: N):
+Mutation Frequency: 0.001
+Conservation Score: 0.999
+Mutations: F(1)
+
+Position 54 (Reference: A):
+Mutation Frequency: 0.001
+Conservation Score: 0.999
+Mutations: F(1)
+
+Position 120 (Reference: S):
+Mutation Frequency: 0.001
+Conservation Score: 0.999
+Mutations: R(1)
+
+Position 119 (Reference: N):
+Mutation Frequency: 0.001
+Conservation Score: 0.999
+Mutations: D(1)
+
+Position 56 (Reference: F):
+Mutation Frequency: 0.001
+Conservation Score: 0.999
+Mutations: C(1)
