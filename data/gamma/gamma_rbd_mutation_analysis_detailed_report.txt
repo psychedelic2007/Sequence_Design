@@ -1,0 +1,48 @@
+=== Comprehensive Mutation Analysis Report ===
+Analysis Date: 2025-02-12 20:36:28
+Total sequences analyzed: 55
+
+=== Statistical Summary ===
+Average mutation frequency: 0.010
+Median mutation frequency: 0.000
+=== Top Mutation Positions (Ordered by Frequency) ===
+
+Position 183 (Reference: N):
+Mutation Frequency: 0.945
+Conservation Score: 0.929
+Mutations: Y(52)
+
+Position 99 (Reference: K):
+Mutation Frequency: 0.836
+Conservation Score: 0.851
+Mutations: T(46)
+
+Position 166 (Reference: E):
+Mutation Frequency: 0.345
+Conservation Score: 0.785
+Mutations: K(19)
+
+Position 134 (Reference: L):
+Mutation Frequency: 0.036
+Conservation Score: 0.948
+Mutations: R(2)
+
+Position 5 (Reference: T):
+Mutation Frequency: 0.018
+Conservation Score: 0.970
+Mutations: I(1)
+
+Position 109 (Reference: D):
+Mutation Frequency: 0.018
+Conservation Score: 0.970
+Mutations: N(1)
+
+Position 172 (Reference: F):
+Mutation Frequency: 0.018
+Conservation Score: 0.970
+Mutations: Y(1)
+
+Position 84 (Reference: I):
+Mutation Frequency: 0.018
+Conservation Score: 0.970
+Mutations: F(1)
