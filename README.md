@@ -11,6 +11,7 @@ Computational pipeline for designing a SARS-CoV-2 spike **receptor-binding domai
 | [`tcell/`](tcell/) | MHC-I/II binding predictions and residue-level T-cell epitope scores |
 | [`docking/`](docking/) | HADDOCK (or similar) cluster structures and interaction analysis plots |
 | [`mutational_analysis.py`](mutational_analysis.py) | Position-wise mutation statistics vs. a reference RBD |
+| [`nsga2_weight_optimization.py`](nsga2_weight_optimization.py) | NSGA-II multi-objective search for mutation / escape / B-cell / T-cell weights |
 | [`master_sequence_generation.py`](master_sequence_generation.py) | Weighted scoring to mark positions for modification (`X`) or retention |
 | [`clean_master_sequence.py`](clean_master_sequence.py) | Fill `X` placeholders using the most common amino acid per position |
 | [`master_seq_verification.py`](master_seq_verification.py) | Apply lineage-specific residue replacements for validation |
@@ -23,8 +24,31 @@ Computational pipeline for designing a SARS-CoV-2 spike **receptor-binding domai
 4. **Combine variants** (`Preprocessing/combine_preprocessed_file.py`): merge lineage preprocessed files for pooled analysis.
 5. **Mutational analysis** (`mutational_analysis.py`): compare aligned RBD sequences to Wuhan reference; export CSV, heatmaps, and reports (see each [`data/<variant>/`](data/) folder).
 6. **T-cell scoring** (`tcell/TCell_Calculation.py`): convert NetMHCpan-style `%Rank_EL` tables into per-residue scores; use [`tcell/mhc1_averaged_scores.csv`](tcell/mhc1_averaged_scores.csv) and [`tcell/mhc2_averaged_scores.csv`](tcell/mhc2_averaged_scores.csv) in master sequence generation.
-7. **Master sequence** (`master_sequence_generation.py`): integrate mutation, escape, B-cell, and T-cell inputs (update CSV paths in the script). Run [`clean_master_sequence.py`](clean_master_sequence.py) to resolve `X` to consensus residues.
-8. **Docking** ([`docking/`](docking/)): compare wild-type vs. master-sequence RBD–ACE2 (or partner) structural ensembles.
+7. **Weight optimization** (`nsga2_weight_optimization.py`): tune `(wm, we, wb, wt)` with NSGA-II on merged per-residue scores (see below). Outputs [`pareto_frontier_results.csv`](pareto_frontier_results.csv); pick a Pareto-optimal weight set for step 8.
+8. **Master sequence** (`master_sequence_generation.py`): integrate mutation, escape, B-cell, and T-cell inputs using the chosen weights (update CSV paths in the script). Run [`clean_master_sequence.py`](clean_master_sequence.py) to resolve `X` to consensus residues.
+9. **Docking** ([`docking/`](docking/)): compare wild-type vs. master-sequence RBD–ACE2 (or partner) structural ensembles.
+
+### NSGA-II weight optimization
+
+[`nsga2_weight_optimization.py`](nsga2_weight_optimization.py) uses [DEAP](https://deap.readthedocs.io/) to evolve four weights—mutation (`wm`), escape (`we`), B-cell (`wb`), and T-cell (`wt`)—normalized to sum to 1. For each candidate individual, residues are **modified** when `(wm·mut + we·esc) − (wb·bc + wt·tc) > 0`, otherwise **retained**.
+
+**Input:** `new_results_13kseqs/variants/final_results/Scores/merged_scores.csv` with columns `mutation_frequency`, `escape`, `bcell_score`, `tcell_score` (update the path in the script if your layout differs).
+
+**Objectives (multi-objective, Pareto front):**
+
+| Objective | Direction | Meaning |
+|-----------|-----------|---------|
+| `total_escape` | Maximize | Sum of `escape + mutation_frequency` over modified residues |
+| `epitope_loss` | Minimize | Count of modified residues with `bcell_score ≥ 0.9` or `tcell_score ≥ 0.9` |
+
+**Run:**
+
+```bash
+pip install deap numpy pandas
+python nsga2_weight_optimization.py
+```
+
+Default evolution: μ=100, λ=200, 40 generations, blend crossover and polynomial bounded mutation. Results are written to `pareto_frontier_results.csv` (normalized weights plus both objective values for each non-dominated solution).
 
 ## Reference RBD
 
@@ -36,11 +60,12 @@ Python 3 with:
 
 - `numpy`, `pandas`, `matplotlib`, `seaborn`, `scipy`, `statsmodels`
 - `Biopython` (`Bio`)
+- `deap` (NSGA-II weight optimization only)
 
 Install example:
 
 ```bash
-pip install numpy pandas matplotlib seaborn scipy statsmodels biopython
+pip install numpy pandas matplotlib seaborn scipy statsmodels biopython deap
 ```
 
 ## Data variants
